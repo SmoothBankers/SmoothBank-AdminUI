@@ -1,0 +1,19 @@
+<div *ngIf="url != ''" class="nav">
+    <a routerLink="/" class="btn-floating btn-large waves-effect waves-light"><i
+            class="material-icons large">arrow_back</i></a>
+    <span>
+        <p class="white-text">Welcome, {{ authService.getUsername() }}!</p>
+        <a (click)="authService.logout()" class="waves-effect waves-light btn"><i
+                class="material-icons right">logout</i>Log
+            Out</a>
+    </span>
+</div>
+
+<div *ngIf="url == ''" class="nav nav-right">
+    <span>
+        <p class="white-text">Welcome, {{ authService.getUsername() }}!</p>
+        <a (click)="authService.logout()" class="waves-effect waves-light btn"><i
+                class="material-icons right">logout</i>Log
+            Out</a>
+    </span>
+</div>

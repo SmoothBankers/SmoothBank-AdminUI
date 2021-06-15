@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+}
+
+html, body, app-root {
+    height: 100%
+}
+
+body {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/* body {
+    background-color: rgba(56, 142, 60, 0.7);
+} */
+
+body {
+    overflow: hidden;
+}

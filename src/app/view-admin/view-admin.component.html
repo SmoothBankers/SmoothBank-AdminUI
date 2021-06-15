@@ -1,0 +1,27 @@
+<app-header></app-header>
+
+<div class="background">
+    <div class="container z-depth-5">
+        <!-- <h1>View Admins</h1> -->
+
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let admin of admins">
+                    <td>{{ admin.firstName }}</td>
+                    <td>{{ admin.lastName }}</td>
+                    <td><a href="mailto:{{admin.email}}">{{ admin.email }}</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
