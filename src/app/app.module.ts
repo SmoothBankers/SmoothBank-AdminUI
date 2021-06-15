@@ -14,6 +14,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
+import { ManageCardsComponent } from './cards/manage-cards.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'view-admin', component: ViewAdminComponent, canActivate: [AuthGuard] },
   { path: 'users/:id', component: UserDetailsComponent, canActivate: [AuthGuard] },
-  { path: 'users', component: ManageUsersComponent, canActivate: [AuthGuard] }
+  { path: 'users', component: ManageUsersComponent, canActivate: [AuthGuard] },
+  { path: 'cards', component: ManageCardsComponent, canActivate: [AuthGuard]}
 ];
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ const routes: Routes = [
     ViewAdminComponent,
     ManageUsersComponent,
     HeaderComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    ManageCardsComponent
   ],
   imports: [
     BrowserModule,
