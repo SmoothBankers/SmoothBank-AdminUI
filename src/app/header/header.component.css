@@ -1,0 +1,17 @@
+.nav {
+    background-color: rgba(56, 142, 60, 0.7);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* outline: 1px solid black; */
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+p {
+    display: inline-block;
+    margin-right: 1rem;
+}
