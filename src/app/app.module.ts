@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'view-admin', component: ViewAdminComponent, canActivate: [AuthGuard] },
   { path: 'users/:id', component: UserDetailsComponent, canActivate: [AuthGuard] },
   { path: 'users', component: ManageUsersComponent, canActivate: [AuthGuard] },
-  { path: 'cards', component: ManageCardsComponent, canActivate: [AuthGuard]}
+  { path: 'cards', component: ManageCardsComponent}
 ];
 @NgModule({
   declarations: [

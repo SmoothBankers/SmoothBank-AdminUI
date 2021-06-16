@@ -12,9 +12,11 @@ export class ManageCardsComponent implements OnInit {
   constructor(private cardService: CardService) { }
 
   ngOnInit(): void {
+    console.log("Test call of init");
     this.cardService.getAllCards()
       .subscribe(response => {
         this.cards = response;
+        console.log("Response");
         console.log(response);
       })
   }
