@@ -7,18 +7,19 @@ import { CardService } from './../services/card.service';
   styleUrls: ['./manage-cards.component.css']
 })
 export class ManageCardsComponent implements OnInit {
-  cards: any;
+  cardRecords: any;
 
   constructor(private cardService: CardService) { }
 
   ngOnInit(): void {
-    console.log("Test call of init");
     this.cardService.getAllCards()
       .subscribe(response => {
-        this.cards = response;
-        console.log("Response");
-        console.log(response);
+        this.cardRecords = response;  
+        //console.log("Subscribe called");
+        console.log("Cards");
+        console.log(this.cardRecords);
       })
+      
   }
 
 }
