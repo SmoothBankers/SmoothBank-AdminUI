@@ -12,7 +12,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let r of cardRecords"> 
+                <tr *ngFor="let r of loanRecords"> 
                     <td> {{ r.holder.holderName }}</td>
                     <td> {{ r.id }} </td>
                     <td>
@@ -30,6 +30,6 @@
             in any way the entire table fails to display. Maybe it's something to do with it forcing the data to
             be loaded or something, and if any one can figure this out you'll have my gratitude but for now it 
             looks like it needs to stay. -->
-        <h3 [hidden]=true>{{cardRecords[0]}}</h3> 
+        <h3 [hidden]=true>{{loanRecords[0]}}</h3> 
     </div>
 </div>

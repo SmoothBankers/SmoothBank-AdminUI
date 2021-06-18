@@ -1,0 +1,21 @@
+:host {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.background {
+    background-color: rgba(56, 142, 60, 0.7);
+    height: 100vh;
+    padding-top: 5%;
+}
+
+.container {
+    background-color: whitesmoke;
+    border-radius: 15px;
+    padding: 1rem;
+    width: 95%;
+
+}

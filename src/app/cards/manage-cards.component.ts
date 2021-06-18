@@ -15,9 +15,6 @@ export class ManageCardsComponent implements OnInit {
     this.cardService.getAllCards()
       .subscribe(response => {
         this.cardRecords = response;  
-        //console.log("Subscribe called");
-        console.log("Cards");
-        console.log(this.cardRecords);
       })
       
   }
