@@ -12,9 +12,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let r of cardRecords"> 
-                    <td> {{ r.holder.holderName }}</td>
+                <tr *ngFor="let r of cardRecords; let i = index;"> 
+                    <td> 
+                        <button class="accordion" (click) = "expand(i)"> {{r.holder.holderName}} </button>
+                        <tr class="panel" [hidden]="currentIndex !== i">
+                            <p> {{r.card.id}} </p>
+                        </tr>
+                    </td>
+
                     <td> {{ r.id }} </td>
+
                     <td>
                         <a routerLink=""
                             class="btn-floating btn-small waves-effect waves-light green right-btn"><i

@@ -6,8 +6,10 @@ import { CardService } from './../services/card.service';
   templateUrl: './manage-cards.component.html',
   styleUrls: ['./manage-cards.component.css']
 })
+
 export class ManageCardsComponent implements OnInit {
   cardRecords: any;
+  currentIndex: any; //keeps track of what accordion is opened
 
   constructor(private cardService: CardService) { }
 
@@ -17,6 +19,14 @@ export class ManageCardsComponent implements OnInit {
         this.cardRecords = response;  
       })
       
+  }
+
+  expand(index: any){
+    if(this.currentIndex === index){
+      this.currentIndex = null; //closes the tab
+      return;
+    }
+    this.currentIndex = index; //changes the opened tab to the newly chosen one
   }
 
 }
