@@ -8,15 +8,43 @@
                 <tr>
                     <th>Legal Name</th>
                     <th>ID</th>
+                    <th>Date</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let r of loanRecords"> 
-                    <td> {{ r.holder.holderName }}</td>
+                <tr *ngFor="let r of loanRecords; let i = index;"> 
+                    <td> 
+                        <button class="accordion" (click) = "expand(i)"> {{r.holder.holderName}} </button>
+                        <tr class="panel" [hidden]="currentIndex !== i">
+                            <thead> 
+                                <tr>
+                                    <th> Name </th>
+                                    <th> Loan #</th>
+                                    <th> Type </th>
+                                    <th> Active </th>
+                                    <th> ID </th>
+                                    <th> Signup Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> {{r.holder.holderName}}</td>
+                                    <td> {{r.loan.id}}</td>
+                                    <td> {{r.loan.type.title}}</td>
+                                    <td> {{r.active}} </td>
+                                    <td> {{r.id}}</td>
+                                    <td> {{r.signUpDate}}</td>
+                                </tr>
+                            </tbody>
+                        </tr>
+                    </td>
+
                     <td> {{ r.id }} </td>
+                    <td> {{r.signUpDate}}</td>
+
                     <td>
-                        <a routerLink=""
+                        <a routerLink="/editCard/{index}"
                             class="btn-floating btn-small waves-effect waves-light green right-btn"><i
                                 class="material-icons">edit</i></a>
                         <a class="btn-floating btn-small waves-effect waves-light red"><i

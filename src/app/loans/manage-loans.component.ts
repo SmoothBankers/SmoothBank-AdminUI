@@ -8,6 +8,7 @@ import { LoanService } from './../services/loan.service';
 })
 export class ManageLoansComponent implements OnInit {
   loanRecords: any;
+  currentIndex: any; //keeps track of what accordion is opened
 
   constructor(private loanService: LoanService) { }
 
@@ -18,6 +19,14 @@ export class ManageLoansComponent implements OnInit {
         console.log(this.loanRecords);
       })
       
+  }
+
+  expand(index: any){
+    if(this.currentIndex === index){
+      this.currentIndex = null; //closes the tab
+      return;
+    }
+    this.currentIndex = index; //changes the opened tab to the newly chosen one
   }
 
 }

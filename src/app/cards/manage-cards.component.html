@@ -8,6 +8,7 @@
                 <tr>
                     <th>Legal Name</th>
                     <th>ID</th>
+                    <th>Date</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -16,14 +17,34 @@
                     <td> 
                         <button class="accordion" (click) = "expand(i)"> {{r.holder.holderName}} </button>
                         <tr class="panel" [hidden]="currentIndex !== i">
-                            <p> {{r.card.id}} </p>
+                            <thead> 
+                                <tr>
+                                    <th> Name </th>
+                                    <th> Card #</th>
+                                    <th> Type </th>
+                                    <th> Active </th>
+                                    <th> ID </th>
+                                    <th> Signup Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> {{r.holder.holderName}}</td>
+                                    <td> {{r.card.id}}</td>
+                                    <td> {{r.card.type.title}}</td>
+                                    <td> {{r.active}} </td>
+                                    <td> {{r.id}}</td>
+                                    <td> {{r.signUpDate}}</td>
+                                </tr>
+                            </tbody>
                         </tr>
                     </td>
 
                     <td> {{ r.id }} </td>
+                    <td> {{r.signUpDate}}</td>
 
                     <td>
-                        <a routerLink=""
+                        <a routerLink="/editCard/{index}"
                             class="btn-floating btn-small waves-effect waves-light green right-btn"><i
                                 class="material-icons">edit</i></a>
                         <a class="btn-floating btn-small waves-effect waves-light red"><i
