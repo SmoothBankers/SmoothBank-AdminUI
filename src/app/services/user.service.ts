@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +28,27 @@ export class UserService {
 
   getOne(id: string) {
     return this.http.get(`${this.url}/users/${id}`, this.options);
+  }
+
+  delete(id: string) {
+    return this.http.delete(`${this.url}/users/${id}`, this.options)
+  }
+
+  register(form: any) {
+    return this.http.post(this.url + '/admins', form)
+      .pipe(
+        map(response => {
+          let result: any = response;
+          if (result && result.token) {
+            localStorage.setItem('token', result.token);
+            return true;
+
+          }
+
+          return false;
+        }), catchError(error => {
+          return of(false);
+        }))
+
   }
 }

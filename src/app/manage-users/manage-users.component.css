@@ -23,3 +23,8 @@
 .right-btn {
     margin-right: 1rem;
 }
+
+.cell-header {
+    cursor: pointer;
+    user-select: none;
+}

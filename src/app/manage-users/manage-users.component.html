@@ -7,11 +7,30 @@
         <table class="striped">
             <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Phone</th>
+                    <th class="cell-header" (click)="handleSort('firstName')">
+                        First Name
+                        <i *ngIf="displayChevron('firstName')" class="material-icons">{{directionChevron()}}</i>
+                    </th>
+                    <th class="cell-header" (click)="handleSort('lastName')">
+                        Last Name
+                        <i *ngIf="displayChevron('lastName')" class="material-icons">{{directionChevron()}}</i>
+                    </th>
+                    <th class="cell-header" (click)="handleSort('username')">
+                        Username
+                        <i *ngIf="displayChevron('username')" class="material-icons">{{directionChevron()}}</i>
+                    </th>
+                    <th class="cell-header" (click)="handleSort('email')">
+                        Email
+                        <i *ngIf="displayChevron('email')" class="material-icons">{{directionChevron()}}</i>
+                    </th>
+                    <th class="cell-header" (click)="handleSort('phone')">
+                        Phone
+                        <i *ngIf="displayChevron('phone')" class="material-icons">{{directionChevron()}}</i>
+                    </th>
+                    <th class="cell-header" (click)="handleSort('status')">
+                        Status
+                        <i *ngIf="displayChevron('status')" class="material-icons">{{directionChevron()}}</i>
+                    </th>
 
                     <th>Actions</th>
                 </tr>
@@ -24,12 +43,13 @@
                     <td>{{ user.username }}</td>
                     <td><a href="mailto:{{user.email}}">{{ user.email }}</a></td>
                     <td>{{ user.phone }}</td>
+                    <td>{{ user.status === 'active' ? 'Active' : 'Deactivated' }}</td>
 
                     <td>
                         <a routerLink="/users/{{user.id}}"
                             class="btn-floating btn-small waves-effect waves-light green right-btn"><i
                                 class="material-icons">edit</i></a>
-                        <a class="btn-floating btn-small waves-effect waves-light red"><i
+                        <a class="btn-floating btn-small waves-effect waves-light red" (click)="deleteUser(user)"><i
                                 class="material-icons">delete</i></a>
                     </td>
 

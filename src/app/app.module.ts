@@ -14,11 +14,14 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
+import { ModalModule } from './modal/modal.module';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
   { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'view-admin', component: ViewAdminComponent, canActivate: [AuthGuard] },
   { path: 'users/:id', component: UserDetailsComponent, canActivate: [AuthGuard] },
   { path: 'users', component: ManageUsersComponent, canActivate: [AuthGuard] }
@@ -31,14 +34,16 @@ const routes: Routes = [
     ViewAdminComponent,
     ManageUsersComponent,
     HeaderComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ModalModule
   ],
   providers: [
     AuthGuard,
