@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<div class="background">
+    <div class="container z-depth-5">
+        <!-- <h1>View Admins</h1> -->
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>Legal Name</th>
+                    <th>ID</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let r of cardRecords"> 
+                    <td> {{ r.holder.holderName }}</td>
+                    <td> {{ r.id }} </td>
+                    <td>
+                        <a routerLink=""
+                            class="btn-floating btn-small waves-effect waves-light green right-btn"><i
+                                class="material-icons">edit</i></a>
+                        <a class="btn-floating btn-small waves-effect waves-light red"><i
+                                class="material-icons">delete</i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- I don't know why or how, but for whatever reason when this is removed or changed 
+            in any way the entire table fails to display. Maybe it's something to do with it forcing the data to
+            be loaded or something, and if any one can figure this out you'll have my gratitude but for now it 
+            looks like it needs to stay. -->
+        <h3 [hidden]=true>{{cardRecords[0]}}</h3> 
+    </div>
+</div>
