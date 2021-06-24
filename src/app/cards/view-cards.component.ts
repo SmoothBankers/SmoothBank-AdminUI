@@ -3,11 +3,11 @@ import { CardService } from './../services/card.service';
 
 @Component({
   selector: 'app-manage-cards',
-  templateUrl: './manage-cards.component.html',
-  styleUrls: ['./manage-cards.component.css']
+  templateUrl: './view-cards.component.html',
+  styleUrls: ['./view-cards.component.css']
 })
 
-export class ManageCardsComponent implements OnInit {
+export class ViewCardsComponent implements OnInit {
   cardRecords: any;
   currentIndex: any; //keeps track of what accordion is opened
 

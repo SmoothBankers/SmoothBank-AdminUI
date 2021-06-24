@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { LoanService } from './../services/loan.service';
+import { LoanService } from '../services/loan.service';
 
 @Component({
   selector: 'app-manage-loans',
-  templateUrl: './manage-loans.component.html',
-  styleUrls: ['./manage-loans.component.css']
+  templateUrl: './view-loans.component.html',
+  styleUrls: ['./view-loans.component.css']
 })
-export class ManageLoansComponent implements OnInit {
+export class ViewLoansComponent implements OnInit {
   loanRecords: any;
   currentIndex: any; //keeps track of what accordion is opened
 

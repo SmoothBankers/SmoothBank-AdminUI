@@ -21,6 +21,6 @@ export class LoanService {
   }
 
   getOne(id: string) {
-    return this.http.get(`${this.url}/cardRecords/${id}`);
+    return this.http.get(`${this.url}/loanRecords/${id}`);
   }
 }

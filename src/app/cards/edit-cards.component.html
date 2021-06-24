@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<div class="background">
+    <div class="container">
+        <div class="row flex">
+            <h3>Holder</h3>
+            <form [formGroup]="form" (ngSubmit)="submit()" class="col s6">
+
+                <div class="row">
+                    <div class="input-field col s4">
+                        <b>Name</b>
+                        <input formControlName="holderName" id="holderName" type="text" class="validate">
+                        <span *ngIf="record.holder.holderName?.touched && record.holder.holderName?.invalid" class="helper-text red-text">Holder must have a name</span>
+                    </div>
+                    <div class="input-field col s4">
+                        <b>Home Phone</b>
+                        <input formControlName="homePhone" id="homePhone" type="text" class="validate">
+                    </div>
+                </div>
+
+                
+
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col s1">Cell Phone:</div>
+            <div class="col s1">{{ record.holder.cellPhone }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col s1">Work Phone:</div>
+            <div class="col s1">{{ record.holder.workPhone }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col s1">Email:</div>
+            <div class="col s1">{{ record.holder.email }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col s1">SSN:</div>
+            <div class="col s1">{{ record.holder.ssn }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col s1">Address:</div>
+            <div class="col s1">{{ record.holder.address }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col s1">P.O Box:</div>
+            <div class="col s1">{{ record.holder.holderName }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col s1">Zipcode:</div>
+            <div class="col s1">{{ record.holder.zipcode }}</div>
+        </div>
+
+        <div class="row">
+            <div class="col s1">Monthly Income:</div>
+            <div class="col s1">{{ record.holder.monthlyIncome }}</div>
+        </div>
+
+        <div>
+            <button type="button" mdbBtn color="success" (click)="submit()"> Confirm </button>
+        </div>
+
+    </div>
+</div>
