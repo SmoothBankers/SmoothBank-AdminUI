@@ -5,10 +5,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-details',
-  templateUrl: './edit-cards.component.html',
-  styleUrls: ['./edit-cards.component.css']
+  templateUrl: './edit-loans.component.html',
+  styleUrls: ['./edit-loans.component.css']
 })
-export class CardDetailsComponent implements OnInit {
+export class LoanDetailsComponent implements OnInit {
   record: any;
 
   constructor(

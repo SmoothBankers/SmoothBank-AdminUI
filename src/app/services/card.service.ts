@@ -23,4 +23,9 @@ export class CardService {
   getOne(id: string) {
     return this.http.get(`${this.url}/cardRecords/${id}`);
   }
+
+  update(record: any) {
+    console.log(`${this.url}/cardRecords`, record);
+    return this.http.put(`${this.url}/cardRecords`, record);//does not seem to actually call the controller, even though cURL PUT works
+  }
 }
